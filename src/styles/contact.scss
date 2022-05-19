@@ -1,0 +1,20 @@
+.dragwrapper{
+    position: relative;
+    width: 70em;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    z-index: 8;
+    padding:5em;
+    background-color: gray;
+}
+.cl-box{
+    padding: 3em 10%;
+    position: relative;
+    overflow: hidden;
+    
+}
+.bg-default{
+   background: rgb(19, 48, 149) none repeat scroll 0% 0%;
+}
