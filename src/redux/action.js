@@ -23,7 +23,7 @@ export const loadUser = () => {
       .get(`${process.env.REACT_APP_API}`)
       .then((resp) => {
         dispatch(getUsers(resp.data));
-        console.table(resp.data);
+        // console.table(resp.data);
       })
       .catch((err) => {
         console.log(err);
@@ -38,7 +38,7 @@ export const deleteUser = (id) => {
       .then((resp) => {
         dispatch(userDelete(resp.data));
         dispatch(loadUser());
-        console.table(resp.data);
+        // console.table(resp.data);
       })
       .catch((err) => {
         console.log(err);

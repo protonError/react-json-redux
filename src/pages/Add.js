@@ -37,13 +37,16 @@ function Add() {
     } else {
       setError("");
       setState({
+        id: Math.floor(Math.random() * 100),
         name: name,
         age: age,
         city: city,
       });
       dispatch(addUser(state));
       console.log(state);
-      alert(state);
+      setName("");
+      setAge("");
+      setCity("");
     }
   };
 
@@ -61,6 +64,7 @@ function Add() {
                   type="text"
                   onChange={(e) => newName(e)}
                   placeholder="Enter name"
+                  value={name}
                 />
               </Form.Group>
               <Form.Group controlId="Age">
@@ -69,6 +73,7 @@ function Add() {
                   type="text"
                   onChange={(e) => newAge(e)}
                   placeholder="Enter age"
+                  value={age}
                 />
               </Form.Group>
               <Form.Group controlId="City">
@@ -77,6 +82,7 @@ function Add() {
                   onChange={(e) => newCity(e)}
                   type="text"
                   placeholder="Enter city"
+                  value={city}
                 />
               </Form.Group>
               <Button className="btn-submit" type="submit">
