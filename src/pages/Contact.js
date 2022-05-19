@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
 import "../styles/contact.scss";
+import Ibm from "../images/Ibm.png";
 function Contact() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const handleDrag = (e, ui) => {
@@ -24,7 +25,12 @@ function Contact() {
               position={{ x: 0, y: 0 }}
               defaultPosition={{ x: 0, y: null }}
             >
-              <div className="dragwrapper"></div>
+              <div className="dragwrapper">
+                <div className="col-md-7 dg-left">
+                  <img src={Ibm} alt="IBM" />
+                </div>
+                <div className="col-md-5 dg-right bg-white"></div>
+              </div>
             </Draggable>
           </div>
         </div>

@@ -6,8 +6,7 @@
     border-radius: 20px;
     transition: all 0.5s ease;
     z-index: 8;
-    padding:5em;
-    background-color: gray;
+    
 }
 .cl-box{
     padding: 3em 10%;
@@ -17,4 +16,10 @@
 }
 .bg-default{
    background: rgb(19, 48, 149) none repeat scroll 0% 0%;
+}
+.dg-left{
+    border-radius: 20px 0px 70px 20px;
+    background-color:  #193fc2;
+    border-color: #193fc2;
+    padding: 4em;
 }
