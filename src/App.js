@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Add from "./pages/Add";
 import Contact from "./pages/Contact";
 import "./App.less";
+import Edit from "./pages/Edit";
 function App() {
   return (
     <>
@@ -14,7 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/add" element={<Add />} />
+          <Route path="/edit/:id" element={<Edit />} />
           <Route path="/contactus" element={<Contact />} />
+
         </Routes>
       </Suspense>
     </>
