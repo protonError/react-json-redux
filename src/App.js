@@ -5,7 +5,7 @@ import Header from "./parts/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Add from "./pages/Add";
 import Contact from "./pages/Contact";
-import "./App.css";
+import "./App.less";
 function App() {
   return (
     <>
