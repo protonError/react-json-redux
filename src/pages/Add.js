@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row, Form, Button } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
+import { Button, Form, Input, InputNumber } from "antd";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../redux/action";
@@ -9,47 +10,18 @@ function Add() {
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   let dispatch = useDispatch();
-  const [error, setError] = useState("");
+
   // const handleInputChange = (e) => {
   //   const { name, value } = e.target;
   //   setState({ ...state, [name]: value });
   // };
-  const [state, setState] = useState({
-    name: "",
-    age: "",
-    city: "",
-  });
-  function newName(e) {
-    setName(e.target.value);
-  }
-  function newAge(e) {
-    setAge(e.target.value);
-  }
-  function newCity(e) {
-    setCity(e.target.value);
-  }
-  let navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name === "" || age === "" || city === "") {
-      setError("Please fill all the fields");
-      alert("Please fill all the fields");
-    } else {
-      setError("");
-      setState({
-        id: Math.floor(Math.random() * 100),
-        name: name,
-        age: age,
-        city: city,
-      });
-      dispatch(addUser(state));
-      console.log(state);
-      setName("");
-      setAge("");
-      setCity("");
-    }
-  };
+  const [form] = Form.useForm();
 
+  let navigate = useNavigate();
+  const submitform = (values) => {
+    dispatch(addUser(values));
+    navigate("/home");
+  };
   return (
     <>
       <Container>
@@ -57,37 +29,57 @@ function Add() {
           <div className="col-md-2">&nbsp;</div>
           <div className="col-md-8 shadow bg-light mt-5 p-4">
             <h5>Add data</h5>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="Name">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  onChange={(e) => newName(e)}
-                  placeholder="Enter name"
-                  value={name}
+            <Form
+              layout="vertical"
+              form={form}
+              requiredMark="optional"
+              onFinish={submitform}
+            >
+              <Form.Item
+                label="Name"
+                name="name"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input placeholder="input placeholder" />
+              </Form.Item>
+              <Form.Item
+                label="Age"
+                name="age"
+                className="!w-full"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <InputNumber
+                  style={{
+                    width: "100%",
+                  }}
+                  min={1}
+                  placeholder="input placeholder"
                 />
-              </Form.Group>
-              <Form.Group controlId="Age">
-                <Form.Label>Age</Form.Label>
-                <Form.Control
-                  type="text"
-                  onChange={(e) => newAge(e)}
-                  placeholder="Enter age"
-                  value={age}
-                />
-              </Form.Group>
-              <Form.Group controlId="City">
-                <Form.Label>City</Form.Label>
-                <Form.Control
-                  onChange={(e) => newCity(e)}
-                  type="text"
-                  placeholder="Enter city"
-                  value={city}
-                />
-              </Form.Group>
-              <Button className="btn-submit" type="submit">
-                Submit
-              </Button>
+              </Form.Item>
+              <Form.Item
+                label="City"
+                name="city"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input placeholder="input placeholder" type="text" />
+              </Form.Item>
+              <Form.Item>
+                <Button type="primary" htmlType="submit">
+                  Submit
+                </Button>
+              </Form.Item>
             </Form>
           </div>
           <div className="col-md-2">&nbsp;</div>

@@ -67,8 +67,8 @@ export const addUser = (user) => {
       .post(`${process.env.REACT_APP_API}`, user)
       .then((resp) => {
         dispatch(userAdd(resp.data));
-        dispatch(loadUser());
-        console.table(resp.data);
+
+        console.log(resp.data, "data is received");
       })
       .catch((err) => {
         console.log(err);
