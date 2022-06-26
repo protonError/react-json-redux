@@ -1,12 +1,6 @@
 {
   "user": [
     {
-      "id": 1,
-      "name": "Mary",
-      "age": 25,
-      "city": "Miami"
-    },
-    {
       "id": 2,
       "name": "Inderpreet",
       "age": "25",
@@ -17,6 +11,18 @@
       "age": "ww",
       "city": "Ludhiana",
       "id": 3
+    },
+    {
+      "name": "wa",
+      "age": 2,
+      "city": "s",
+      "id": 4
+    },
+    {
+      "name": "wa",
+      "age": 2,
+      "city": "s",
+      "id": 5
     }
   ]
 }

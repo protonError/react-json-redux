@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./parts/Header";

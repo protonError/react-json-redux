@@ -1,5 +1,5 @@
 import * as types from "./actiontype";
-import axios from "axios";
+// import axios from "axios";
 const initialState = {
   users: [],
   user: {},

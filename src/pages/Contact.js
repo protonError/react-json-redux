@@ -7,7 +7,7 @@ function Contact() {
   const handleDrag = (e, ui) => {
     setPosition({ x: ui.x, y: null });
   };
-
+  console.log(position);
   return (
     <>
       <div className="container-fluid bg-default cl-box">
